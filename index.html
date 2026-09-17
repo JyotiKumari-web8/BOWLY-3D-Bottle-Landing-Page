@@ -1,49 +1,841 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bolly™ Clarify — Next-Gen 3D Dandruff Defense Shampoo</title>
+  <meta name="description" content="Experience Bolly Clarify: The 3D dermatologist-engineered shampoo that knocks out flakes at the root while restoring scalp hydration and luminous shine.">
 
-<title>Boli Natural Shampoo</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap"
+    rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
 
+  <!-- Three.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 
 <body>
+  <div class="app-container">
 
-<section class="hero">
+    <!-- Top Announcement Bar -->
+    <div class="announcement-bar" id="announcement-bar">
+      <div class="announcement-content">
+        <span class="announcement-pill">NEW LAUNCH</span>
+        <span>Get <strong>15% OFF</strong> with code <code class="code-badge">FRESH15</code> • Free Worldwide Shipping over $40</span>
+      </div>
+      <button class="announcement-close" id="announcement-close" aria-label="Dismiss banner">&times;</button>
+    </div>
 
-<div class="content">
+    <!-- Header Navigation -->
+    <header class="header" id="main-header">
+      <div class="header-left">
+        <a href="#hero" class="logo" id="logo-link">
+          bolly<span class="logo-dot">.</span>
+        </a>
+      </div>
 
-<h1>
-Natural Care<br>
-For Your Hair
-</h1>
+      <div class="header-center">
+        <nav class="nav-bar" id="main-navigation">
+          <a href="#hero" class="nav-link active">Shop 3D</a>
+          <a href="#benefits" class="nav-link">Benefits</a>
+          <a href="#ingredients" class="nav-link">Science</a>
+          <a href="#routine" class="nav-link">Routine</a>
+          <a href="#comparison" class="nav-link">Comparison</a>
+          <a href="#reviews" class="nav-link">Reviews</a>
+          <a href="#faq" class="nav-link">FAQ</a>
+        </nav>
+      </div>
 
-<p>
-Experience premium shampoo powered by nature
-and modern technology.
-</p>
+      <div class="header-right">
+        <button class="icon-btn search-btn" id="search-toggle" aria-label="Search">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
 
-<button>
-Shop Now
-</button>
+        <button class="icon-btn cart-btn" id="cart-toggle" aria-label="Shopping Cart">
+          <span class="cart-icon-wrapper">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="cart-badge" id="cart-count-badge">1</span>
+          </span>
+        </button>
 
-</div>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
 
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="#hero" class="mobile-nav-link">Shop 3D Experience</a>
+      <a href="#benefits" class="mobile-nav-link">Proven Benefits</a>
+      <a href="#ingredients" class="mobile-nav-link">Active Ingredients</a>
+      <a href="#routine" class="mobile-nav-link">How To Use</a>
+      <a href="#comparison" class="mobile-nav-link">Why Bolly</a>
+      <a href="#reviews" class="mobile-nav-link">Customer Reviews</a>
+      <a href="#faq" class="mobile-nav-link">Frequently Asked Questions</a>
+    </div>
 
-<div class="product">
+    <!-- MAIN HERO SECTION WITH 3D EXPERIENCE -->
+    <main class="hero-section" id="hero">
+      <div class="bg-gradient-orb orb-1" id="orb-1"></div>
+      <div class="bg-gradient-orb orb-2" id="orb-2"></div>
+      <div class="bg-grid-lines"></div>
 
-<div id="three-container"></div>
+      <!-- Left Hero Column -->
+      <div class="hero-left">
+        <div class="tag-container" id="hero-tags">
+          <span class="tag tag-outline">CLINICAL FORMULATION</span>
+          <span class="tag tag-solid" id="hero-edition-tag">VIOLET CLARIFY</span>
+        </div>
 
-</div>
+        <h1 class="hero-title" id="main-heading">
+          <span class="word-1">KNOCK</span>
+          <span class="word-2">OUT</span>
+          <span class="word-3" id="hero-title-accent">FLAKES</span>
+        </h1>
 
+        <p class="hero-subtitle" id="sub-heading">WITHOUT STRIPPING YOUR HAIR OF ESSENTIAL MOISTURE</p>
 
-</section>
+        <!-- Variant / Scent Selector -->
+        <div class="variant-picker-section">
+          <span class="variant-label">SELECT BOTTLE EDITION & SCENT:</span>
+          <div class="variant-options" id="variant-options">
+            <button class="variant-pill active" data-variant="violet" title="Clarify Violet - Lavender & White Tea">
+              <span class="variant-swatch" style="background: linear-gradient(135deg, #5c35b6, #7b58c7);"></span>
+              <span>Clarify Violet</span>
+            </button>
+            <button class="variant-pill" data-variant="emerald" title="Fresh Mint - Eucalyptus & Tea Tree">
+              <span class="variant-swatch" style="background: linear-gradient(135deg, #0d7a5f, #22c55e);"></span>
+              <span>Fresh Mint</span>
+            </button>
+            <button class="variant-pill" data-variant="amber" title="Argan Glow - Amber & Honeycomb">
+              <span class="variant-swatch" style="background: linear-gradient(135deg, #c2610d, #f59e0b);"></span>
+              <span>Argan Glow</span>
+            </button>
+            <button class="variant-pill" data-variant="rose" title="Rose Quartz - Damask Rose & Peony">
+              <span class="variant-swatch" style="background: linear-gradient(135deg, #b8326e, #f472b6);"></span>
+              <span>Rose Blossom</span>
+            </button>
+          </div>
+        </div>
 
+        <!-- Scent Note Chips -->
+        <div class="scent-card" id="scent-card">
+          <div class="scent-header">
+            <span class="scent-icon">✨</span>
+            <span class="scent-title" id="scent-name">Aroma Profile: French Lavender & White Tea</span>
+          </div>
+          <p class="scent-desc" id="scent-desc">Calming botanical notes with crisp herbal finish that leaves hair smelling salon-fresh for 48 hours.</p>
+        </div>
+      </div>
 
-<script type="module" src="script.js"></script>
+      <!-- Center 3D Interactive Viewport -->
+      <div class="canvas-viewport" id="canvas-viewport">
+        <svg class="bg-rings" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="500" cy="500" r="440" stroke="currentColor" class="ring-svg-stroke" stroke-width="1.5" />
+          <circle cx="500" cy="500" r="330" stroke="currentColor" class="ring-svg-stroke" stroke-width="1" stroke-dasharray="6 8" />
+          <circle cx="500" cy="500" r="230" stroke="currentColor" class="ring-svg-stroke" stroke-width="1.5" />
+          <circle cx="500" cy="500" r="130" stroke="currentColor" class="ring-svg-stroke" stroke-width="1" stroke-dasharray="3 5" />
+        </svg>
 
+        <div class="canvas-container" id="canvas-container"></div>
+
+        <!-- 3D Hotspots overlay -->
+        <div class="hotspot-pin" id="hotspot-pump" style="top: 24%; left: 38%;">
+          <button class="hotspot-trigger" aria-label="Pump details">+</button>
+          <div class="hotspot-tooltip">
+            <strong>Zero-Drip Precision Pump</strong>
+            <p>Metered 2ml dispensing engineered from 100% recyclable mono-material.</p>
+          </div>
+        </div>
+
+        <div class="hotspot-pin" id="hotspot-label" style="top: 50%; left: 60%;">
+          <button class="hotspot-trigger" aria-label="Formula details">+</button>
+          <div class="hotspot-tooltip">
+            <strong>Clinical Biome Complex</strong>
+            <p>2% Zinc Pyrithione + BHA gently micro-exfoliates dead scalp cells.</p>
+          </div>
+        </div>
+
+        <div class="hotspot-pin" id="hotspot-base" style="top: 76%; left: 42%;">
+          <button class="hotspot-trigger" aria-label="Eco details">+</button>
+          <div class="hotspot-tooltip">
+            <strong>100% Ocean-Bound HDPE</strong>
+            <p>Sustainably harvested and infinitely recyclable bottle body.</p>
+          </div>
+        </div>
+
+        <!-- 3D Controls and Drag Hint -->
+        <div class="canvas-overlay-controls">
+          <div class="drag-hint" id="drag-hint">
+            <span class="hint-icon">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </span>
+            <span>Drag to rotate 3D bottle</span>
+          </div>
+
+          <button class="reset-view-btn" id="reset-view-btn" title="Reset 3D camera angle">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23 4v6h-6"></path>
+              <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+            </svg>
+            Reset Angle
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Hero Column (Price, Purchase & Features) -->
+      <div class="hero-right">
+        <div class="info-card" id="info-card">
+          <div class="rating-badge">
+            <div class="stars">★★★★★</div>
+            <span class="rating-score">4.9/5</span>
+            <span class="review-count">(12,480+ reviews)</span>
+          </div>
+
+          <h2 class="product-pricing">
+            <span class="current-price" id="hero-price">$28.00</span>
+            <span class="original-price">$36.00</span>
+            <span class="discount-badge">Save 22%</span>
+          </h2>
+
+          <p class="description" id="hero-desc-text">
+            Formulated with micro-dosed zinc pyrithione & nourishing plant ceramides for scalp balance and zero flakes from Day 1.
+          </p>
+
+          <!-- Subscription / One-time Toggle -->
+          <div class="purchase-type-picker">
+            <label class="purchase-option active">
+              <input type="radio" name="purchase-type" value="subscription" checked>
+              <div class="option-details">
+                <div class="option-title-row">
+                  <span class="option-name">Subscribe & Save 20%</span>
+                  <span class="option-price">$22.40</span>
+                </div>
+                <span class="option-subtext">Delivered every 60 days • Cancel anytime</span>
+              </div>
+            </label>
+            <label class="purchase-option">
+              <input type="radio" name="purchase-type" value="onetime">
+              <div class="option-details">
+                <div class="option-title-row">
+                  <span class="option-name">One-Time Purchase</span>
+                  <span class="option-price">$28.00</span>
+                </div>
+                <span class="option-subtext">Single 250ml bottle</span>
+              </div>
+            </label>
+          </div>
+
+          <!-- Add to Cart CTA -->
+          <button class="cta-button" id="shop-cta">
+            <span class="cta-text-wrapper">
+              <span class="cta-main-text">ADD TO CART</span>
+              <span class="cta-sub-text" id="cta-variant-subtext">Violet Clarify • $22.40</span>
+            </span>
+            <span class="arrow-icon-wrapper">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </span>
+          </button>
+
+          <!-- Micro Guarantees -->
+          <div class="hero-perks">
+            <div class="perk-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>30-Day Flake-Free Guarantee</span>
+            </div>
+            <div class="perk-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+              <span>Free Fast Shipping over $40</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- TRUST & KEY BENEFITS BAR -->
+    <section class="benefits-banner" id="benefits">
+      <div class="benefit-item">
+        <div class="benefit-icon-circle">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <div>
+          <h4>100% Flake Elimination</h4>
+          <p>Visible results within first 3 washes</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon-circle">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+        </div>
+        <div>
+          <h4>Zero Dryness or Stripping</h4>
+          <p>Infused with Hyaluronic Scalp Hydrator</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon-circle">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <h4>Dermatologist Approved</h4>
+          <p>Safe for sensitive & color-treated hair</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon-circle">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div>
+          <h4>100% Vegan & Clean</h4>
+          <p>No sulfates, parabens, or synthetic dyes</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- INGREDIENT SCIENCE SECTION -->
+    <section class="ingredients-section section-padding" id="ingredients">
+      <div class="section-container">
+        <div class="section-badge">BIO-ACTIVE FORMULATION</div>
+        <h2 class="section-title">Clean Clinical Ingredients That Truly Work</h2>
+        <p class="section-subtitle">We combined clinical scalp actives with botanical hydrators so you never have to choose between anti-dandruff efficacy and silky, healthy hair.</p>
+
+        <div class="ingredients-grid">
+          <!-- Ingredient 1 -->
+          <div class="ingredient-card active-card">
+            <div class="ingredient-header">
+              <span class="ingredient-pct">1.0%</span>
+              <span class="ingredient-type">Active Clinical</span>
+            </div>
+            <h3 class="ingredient-name">Zinc Pyrithione (ZPT)</h3>
+            <p class="ingredient-desc">Targets Malassezia yeast at the cellular level to stop dandruff flakes, itching, and redness before they start.</p>
+            <div class="ingredient-tags">
+              <span>Anti-Fungal</span>
+              <span>Itch Relief</span>
+            </div>
+          </div>
+
+          <!-- Ingredient 2 -->
+          <div class="ingredient-card">
+            <div class="ingredient-header">
+              <span class="ingredient-pct">1.5%</span>
+              <span class="ingredient-type">Exfoliant</span>
+            </div>
+            <h3 class="ingredient-name">Micro Salicylic Acid</h3>
+            <p class="ingredient-desc">Gentle BHA clears follicular sebum buildup and unclogs pores without irritating delicate scalp tissue.</p>
+            <div class="ingredient-tags">
+              <span>Sebum Control</span>
+              <span>Pore Detox</span>
+            </div>
+          </div>
+
+          <!-- Ingredient 3 -->
+          <div class="ingredient-card">
+            <div class="ingredient-header">
+              <span class="ingredient-pct">3.0%</span>
+              <span class="ingredient-type">Hydration</span>
+            </div>
+            <h3 class="ingredient-name">Plant Ceramides & Niacinamide</h3>
+            <p class="ingredient-desc">Restores the protective lipid moisture barrier, reinforcing hair follicles against breakage and split ends.</p>
+            <div class="ingredient-tags">
+              <span>Moisture Lock</span>
+              <span>Root Strength</span>
+            </div>
+          </div>
+
+          <!-- Ingredient 4 -->
+          <div class="ingredient-card">
+            <div class="ingredient-header">
+              <span class="ingredient-pct">2.0%</span>
+              <span class="ingredient-type">Botanical</span>
+            </div>
+            <h3 class="ingredient-name">Organic Tea Tree & Rosemary</h3>
+            <p class="ingredient-desc">Soothes inflammation and stimulates micro-circulation for revitalized, full-bodied hair growth.</p>
+            <div class="ingredient-tags">
+              <span>Soothing</span>
+              <span>Stimulating</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLINICAL RESULTS & STATS -->
+    <section class="clinical-section">
+      <div class="section-container">
+        <div class="clinical-box">
+          <div class="clinical-header">
+            <span class="section-badge light">INDEPENDENT CLINICAL TRIAL</span>
+            <h2 class="clinical-title">Validated By Real Clinical Testing</h2>
+            <p class="clinical-desc">Based on a 4-week third-party clinical study of 120 participants suffering from moderate to severe dandruff:</p>
+          </div>
+
+          <div class="stats-row">
+            <div class="stat-card">
+              <div class="stat-number">98%</div>
+              <p class="stat-label">Reported total flake reduction within 14 days</p>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">96%</div>
+              <p class="stat-label">Noticed immediate itch relief after the first wash</p>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">94%</div>
+              <p class="stat-label">Agreed hair felt softer & more hydrated than previous shampoos</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3-STEP WASH ROUTINE -->
+    <section class="routine-section section-padding" id="routine">
+      <div class="section-container">
+        <div class="section-badge">THE PROTOCOL</div>
+        <h2 class="section-title">The 3-Step Flake-Free Ritual</h2>
+        <p class="section-subtitle">Maximize active ingredient absorption for lasting scalp equilibrium.</p>
+
+        <div class="routine-steps">
+          <div class="routine-step-card">
+            <div class="step-badge">STEP 01</div>
+            <h3>Apply & Lather</h3>
+            <p>Pump 2–3 dollops into damp hands. Work into wet hair and massage directly into the scalp until a rich, micro-dense lather forms.</p>
+            <div class="step-timing">⏱ 30 Seconds</div>
+          </div>
+
+          <div class="routine-step-card featured-step">
+            <div class="step-badge">STEP 02 (CRITICAL)</div>
+            <h3>Let Actives Activate</h3>
+            <p>Allow the Zinc Pyrithione and Salicylic Acid to penetrate scalp layers. Breathe in the refreshing botanical aromatherapy.</p>
+            <div class="step-timing">⏱ 2 Full Minutes</div>
+          </div>
+
+          <div class="routine-step-card">
+            <div class="step-badge">STEP 03</div>
+            <h3>Rinse & Glow</h3>
+            <p>Rinse thoroughly with lukewarm water. Follow with Bolly Hydrating Conditioner for ultra-glossy, tangle-free locks.</p>
+            <div class="step-timing">⏱ 60 Seconds</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARISON MATRIX -->
+    <section class="comparison-section section-padding" id="comparison">
+      <div class="section-container">
+        <div class="section-badge">THE DIFFERENCE</div>
+        <h2 class="section-title">Why Bolly Outperforms Traditional Shampoos</h2>
+        <p class="section-subtitle">See why thousands are upgrading from harsh drugstore bottles to Bolly Clarify.</p>
+
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Feature / Benchmark</th>
+                <th class="highlight-col">Bolly Clarify™</th>
+                <th>Traditional Anti-Dandruff</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Flake Elimination Speed</strong></td>
+                <td class="highlight-col"><span class="check-icon">✓</span> 1-3 Washes (Clinical ZPT)</td>
+                <td><span class="cross-icon">✗</span> 3-6 Weeks</td>
+              </tr>
+              <tr>
+                <td><strong>Hydration & Barrier Care</strong></td>
+                <td class="highlight-col"><span class="check-icon">✓</span> Ceramides + Niacinamide</td>
+                <td><span class="cross-icon">✗</span> Leaves hair dry & brittle</td>
+              </tr>
+              <tr>
+                <td><strong>Aromatherapy Fragrance</strong></td>
+                <td class="highlight-col"><span class="check-icon">✓</span> French Lavender & White Tea</td>
+                <td><span class="cross-icon">✗</span> Medicinal chemical odor</td>
+              </tr>
+              <tr>
+                <td><strong>Color-Treated Hair Safe</strong></td>
+                <td class="highlight-col"><span class="check-icon">✓</span> 100% Sulfate & Salt-Free</td>
+                <td><span class="cross-icon">✗</span> Strips dye and highlights</td>
+              </tr>
+              <tr>
+                <td><strong>Packaging Sustainability</strong></td>
+                <td class="highlight-col"><span class="check-icon">✓</span> 100% Recycled Ocean Plastic</td>
+                <td><span class="cross-icon">✗</span> Virgin Non-Recyclable Plastic</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- CUSTOMER REVIEWS SECTION -->
+    <section class="reviews-section section-padding" id="reviews">
+      <div class="section-container">
+        <div class="reviews-header-row">
+          <div>
+            <div class="section-badge">COMMUNITY LOVE</div>
+            <h2 class="section-title">Loved By 12,000+ Happy Scalps</h2>
+          </div>
+          <div class="review-stats-summary">
+            <div class="big-stars">★★★★★</div>
+            <span class="stats-text"><strong>4.9 Out of 5.0</strong> based on verified purchases</span>
+          </div>
+        </div>
+
+        <div class="reviews-grid">
+          <!-- Review 1 -->
+          <div class="review-card">
+            <div class="review-rating">★★★★★</div>
+            <h4 class="review-headline">"Literally saved my confidence"</h4>
+            <p class="review-body">"I struggled with flaky shoulders for 6 years. Every other shampoo smelled like sulfur and fried my fine hair. Bolly cleared my flakes in 4 days and my hair has never been glossier!"</p>
+            <div class="review-author">
+              <div class="author-avatar" style="background: #5c35b6;">SR</div>
+              <div>
+                <strong class="author-name">Sarah Jenkins</strong>
+                <span class="author-meta">Verified Buyer • Violet Edition</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="review-card">
+            <div class="review-rating">★★★★★</div>
+            <h4 class="review-headline">"The Fresh Mint scent is addictive"</h4>
+            <p class="review-body">"The eucalyptus cooling sensation is unmatched after a workout. No itching, no white specks on my dark tees, and the 3D bottle looks super sleek on my shower shelf."</p>
+            <div class="review-author">
+              <div class="author-avatar" style="background: #0d7a5f;">MD</div>
+              <div>
+                <strong class="author-name">Marcus Davis</strong>
+                <span class="author-meta">Verified Buyer • Fresh Mint</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="review-card">
+            <div class="review-rating">★★★★★</div>
+            <h4 class="review-headline">"Safe on my platinum bleached hair!"</h4>
+            <p class="review-body">"Most dandruff shampoos turn blonde hair brassy or dry it out like straw. Bolly is sulfate-free and protected my color while completely banishing dryness flakes."</p>
+            <div class="review-author">
+              <div class="author-avatar" style="background: #c2610d;">EL</div>
+              <div>
+                <strong class="author-name">Elena Rostova</strong>
+                <span class="author-meta">Verified Buyer • Argan Glow</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ ACCORDION -->
+    <section class="faq-section section-padding" id="faq">
+      <div class="section-container">
+        <div class="section-badge">GOT QUESTIONS?</div>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Everything you need to know about the Bolly Clarify formula and routine.</p>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How often should I use Bolly Clarify?</span>
+              <span class="faq-chevron">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>For active flakes, use 2 to 3 times per week. Once symptoms are under control, you can use it 1 to 2 times weekly as maintenance. Our gentle ceramide base ensures it won't over-dry your hair even with daily use.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Is Bolly safe for color-treated or chemically processed hair?</span>
+              <span class="faq-chevron">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, 100%. Bolly Clarify is formulated without harsh sulfates, parabens, or sodium chloride salts that strip color or break keratin bonds.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How quickly will I see results?</span>
+              <span class="faq-chevron">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Most customers report immediate scalp soothing and reduced itching from the very first wash. Visible flake reduction occurs within 3 to 5 days, with complete elimination in 14 days.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What is your 30-Day Money-Back Guarantee?</span>
+              <span class="faq-chevron">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>If you don't experience a 100% flake-free scalp within 30 days of daily or routine use, simply email our concierge support team for a full, hassle-free refund. No return shipping required.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER / DISCOUNT CTA -->
+    <section class="newsletter-section">
+      <div class="newsletter-card">
+        <span class="newsletter-badge">EXCLUSIVE OFFER</span>
+        <h2>Join The Scalp Care Revolution</h2>
+        <p>Subscribe for exclusive product drops, expert hair rituals, and instantly unlock <strong>15% OFF</strong> your first order.</p>
+        <form class="newsletter-form" id="newsletter-form">
+          <input type="email" class="newsletter-input" id="newsletter-email" placeholder="Enter your email address" required>
+          <button type="submit" class="newsletter-btn">Claim 15% Off</button>
+        </form>
+        <span class="newsletter-note">Instant discount code sent immediately. Unsubscribe anytime.</span>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a href="#hero" class="logo">bolly<span class="logo-dot">.</span></a>
+            <p>Dermatologist-engineered 3D haircare formulated with pure science, clean botanicals, and zero compromises.</p>
+            <div class="social-links">
+              <a href="#" aria-label="Instagram">Instagram</a>
+              <a href="#" aria-label="TikTok">TikTok</a>
+              <a href="#" aria-label="Twitter">Twitter</a>
+              <a href="#" aria-label="YouTube">YouTube</a>
+            </div>
+          </div>
+
+          <div class="footer-links-group">
+            <h4>Products</h4>
+            <ul>
+              <li><a href="#hero">Clarify Violet (250ml)</a></li>
+              <li><a href="#hero">Fresh Mint (250ml)</a></li>
+              <li><a href="#hero">Argan Glow (250ml)</a></li>
+              <li><a href="#hero">Scalp Massager Brush</a></li>
+              <li><a href="#hero">Travel Trio Bundle</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links-group">
+            <h4>Learn & Science</h4>
+            <ul>
+              <li><a href="#ingredients">Clinical Studies</a></li>
+              <li><a href="#routine">The 3-Step Protocol</a></li>
+              <li><a href="#comparison">Ingredient Directory</a></li>
+              <li><a href="#faq">Scalp Microbiome Guide</a></li>
+              <li><a href="#faq">Recycling Program</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links-group">
+            <h4>Customer Care</h4>
+            <ul>
+              <li><a href="#faq">30-Day Guarantee</a></li>
+              <li><a href="#faq">Shipping & Returns</a></li>
+              <li><a href="#faq">Manage Subscription</a></li>
+              <li><a href="#faq">Contact Support</a></li>
+              <li><a href="#faq">Track Order</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 Bolly Haircare Lab Inc. All rights reserved.</p>
+          <div class="footer-legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Accessibility</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- SEARCH OVERLAY MODAL -->
+  <div class="search-overlay" id="search-overlay">
+    <div class="search-modal">
+      <div class="search-input-wrapper">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" class="search-input" id="search-input" placeholder="Search products, ingredients, scents..." autocomplete="off">
+        <button class="search-close" id="search-close-btn">&times;</button>
+      </div>
+
+      <div class="search-quick-tags">
+        <span>Popular:</span>
+        <button class="search-tag-chip" data-query="Violet">Violet Clarify</button>
+        <button class="search-tag-chip" data-query="Mint">Fresh Mint</button>
+        <button class="search-tag-chip" data-query="Zinc">Zinc Pyrithione</button>
+        <button class="search-tag-chip" data-query="Ceramides">Ceramides</button>
+      </div>
+
+      <div class="search-results-container" id="search-results-container">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- CART SLIDE-IN DRAWER -->
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-header">
+      <div class="cart-title-row">
+        <h2>Your Bag</h2>
+        <span class="cart-count-title" id="cart-drawer-count">(1 item)</span>
+      </div>
+      <button class="cart-close" id="cart-close-btn">&times;</button>
+    </div>
+
+    <!-- Free Shipping Progress Bar -->
+    <div class="shipping-progress-box">
+      <div class="shipping-progress-text" id="shipping-progress-text">
+        Add <strong>$17.60</strong> more for <strong>FREE Express Shipping</strong>
+      </div>
+      <div class="progress-track">
+        <div class="progress-bar" id="shipping-progress-bar" style="width: 56%;"></div>
+      </div>
+    </div>
+
+    <div class="cart-drawer-body" id="cart-items-container">
+      <!-- Items dynamically populated via JS -->
+    </div>
+
+    <div class="cart-drawer-footer">
+      <!-- Promo Code Input -->
+      <div class="promo-box">
+        <input type="text" class="promo-input" id="promo-input" placeholder="Promo code (e.g. FRESH15)">
+        <button class="promo-btn" id="promo-apply-btn">Apply</button>
+      </div>
+      <div class="promo-applied-badge" id="promo-applied-badge" style="display: none;">
+        <span>Code <strong>FRESH15</strong> applied (15% OFF)</span>
+        <button id="promo-remove-btn">&times;</button>
+      </div>
+
+      <div class="cart-summary-lines">
+        <div class="cart-summary-row">
+          <span>Subtotal</span>
+          <span id="cart-subtotal-amount">$22.40</span>
+        </div>
+        <div class="cart-summary-row discount-row" id="cart-discount-row" style="display: none;">
+          <span>Discount</span>
+          <span id="cart-discount-amount">-$3.36</span>
+        </div>
+        <div class="cart-summary-row">
+          <span>Estimated Shipping</span>
+          <span id="cart-shipping-amount">$4.99</span>
+        </div>
+        <div class="cart-total-row">
+          <span>Total</span>
+          <span id="cart-total-amount">$27.39</span>
+        </div>
+      </div>
+
+      <button class="checkout-btn" id="checkout-btn">
+        <span>Proceed to Secure Checkout</span>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </button>
+
+      <div class="trust-icons-row">
+        <span>🔒 256-Bit SSL Encryption</span>
+        <span>•</span>
+        <span>⚡ Instant Order Dispatch</span>
+      </div>
+    </div>
+  </div>
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+
+  <!-- CHECKOUT SIMULATION MODAL -->
+  <div class="checkout-modal-overlay" id="checkout-modal">
+    <div class="checkout-modal-card">
+      <button class="checkout-modal-close" id="checkout-modal-close">&times;</button>
+      <div class="checkout-header">
+        <span class="checkout-badge">FAST SECURE CHECKOUT</span>
+        <h3>Complete Your Order</h3>
+      </div>
+      <div class="checkout-body">
+        <div class="checkout-order-preview" id="checkout-order-preview">
+          <!-- Summary filled via JS -->
+        </div>
+        <form class="checkout-form" id="checkout-form">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" placeholder="Jane Doe" required value="Jane Doe">
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="jane@example.com" required value="jane@example.com">
+          </div>
+          <div class="form-group">
+            <label>Shipping Address</label>
+            <input type="text" placeholder="123 Luxury Ave, Suite 400" required value="123 Luxury Ave">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>City</label>
+              <input type="text" placeholder="New York" required value="New York">
+            </div>
+            <div class="form-group">
+              <label>Postal Code</label>
+              <input type="text" placeholder="10001" required value="10001">
+            </div>
+          </div>
+          <button type="submit" class="place-order-btn" id="place-order-btn">
+            Place Order Now
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ORDER SUCCESS CONFIRMATION MODAL -->
+  <div class="success-modal-overlay" id="success-modal">
+    <div class="success-modal-card">
+      <div class="success-icon-circle">✓</div>
+      <h2>Order Confirmed!</h2>
+      <p>Thank you for choosing Bolly! Your flake-free journey has officially begun.</p>
+      <div class="order-details-box">
+        <div class="detail-row"><span>Order Number:</span> <strong>#BOL-89429</strong></div>
+        <div class="detail-row"><span>Estimated Delivery:</span> <strong>2-3 Business Days</strong></div>
+      </div>
+      <button class="success-done-btn" id="success-done-btn">Back to Shop</button>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Main JavaScript File -->
+  <script src="main.js"></script>
 </body>
+
 </html>
