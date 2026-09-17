@@ -2,7 +2,6 @@
   "name": "bolly-3d-bottle-landing-page",
   "version": "1.0.0",
   "description": "Bolly 3D Interactive Dandruff-Defense Shampoo Landing Page with Three.js",
-  "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
